@@ -344,11 +344,180 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .title-sticker h1 { font-size: 2.5em; }
+            body {
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 20px 10px;
+            }
+
+            .hero-section {
+                padding: 40px 20px;
+                margin-bottom: 30px;
+            }
+
+            .title-sticker {
+                padding: 15px 25px;
+                transform: rotate(-1deg);
+            }
+
+            .title-sticker h1 { 
+                font-size: 2em;
+                letter-spacing: 1px;
+            }
+
+            .subtitle-tag {
+                font-size: 1em;
+                padding: 8px 20px;
+            }
+
+            .content-grid { 
+                gap: 20px;
+                margin: 20px 0;
+            }
+
             .photo-card, .info-stack, .badge-container, .message-note, .stats-section {
                 grid-column: span 12;
             }
-            .content-grid { gap: 20px; }
+
+            .photo-card {
+                transform: rotate(0deg);
+            }
+
+            .photo-card img {
+                border: 4px solid #fff;
+            }
+
+            .tape {
+                display: none;
+            }
+
+            .info-stack {
+                gap: 15px;
+            }
+
+            .info-card {
+                padding: 20px;
+                transform: rotate(0deg);
+            }
+
+            .info-card h3 {
+                font-size: 1.2em;
+            }
+
+            .info-card p {
+                font-size: 1em;
+            }
+
+            .badge-container {
+                padding: 25px;
+                transform: rotate(0deg);
+            }
+
+            .badge-container h2 {
+                font-size: 2em;
+            }
+
+            .badge-details p {
+                font-size: 1em;
+            }
+
+            .message-note {
+                padding: 25px;
+                transform: rotate(0deg);
+            }
+
+            .message-note p {
+                font-size: 1em;
+            }
+
+            .stats-section {
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            .stat-polaroid {
+                padding: 15px;
+                padding-bottom: 40px;
+                transform: rotate(0deg) !important;
+            }
+
+            .stat-content {
+                padding: 25px;
+            }
+
+            .stat-content .icon {
+                font-size: 2.5em;
+            }
+
+            .stat-content .value {
+                font-size: 1.5em;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                margin: 20px 0;
+            }
+
+            .gallery-item {
+                transform: rotate(0deg) !important;
+            }
+
+            .gallery-item img {
+                border: 4px solid #fff;
+            }
+
+            .sticker {
+                font-size: 2em;
+            }
+
+            .sticker-1 { 
+                top: 50px; 
+                right: 5%; 
+            }
+
+            .sticker-2 { 
+                top: 40%; 
+                left: 2%; 
+            }
+
+            .sticker-3 { 
+                bottom: 50px; 
+                right: 5%; 
+            }
+
+            .footer {
+                padding: 25px 15px;
+                margin-top: 30px;
+            }
+
+            .footer p {
+                font-size: 1em;
+            }
+
+            .particle {
+                font-size: 15px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title-sticker h1 { 
+                font-size: 1.5em;
+            }
+
+            .badge-container h2 {
+                font-size: 1.5em;
+            }
+
+            .stat-content .icon {
+                font-size: 2em;
+            }
+
+            .sticker {
+                font-size: 1.5em;
+            }
         }
 
         /* Particles */
