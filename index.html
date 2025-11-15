@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amy's El Maja Achievement 🎣</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0e27;
+            color: #fff;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23ff6b9d" opacity="0.5"/></svg>'), auto;
+        }
+
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 107, 157, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 242, 254, 0.2) 0%, transparent 50%);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header dengan style scrapbook */
+        .hero-section {
+            position: relative;
+            margin-bottom: 60px;
+            padding: 80px 40px;
+        }
+
+        .title-sticker {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px 50px;
+            transform: rotate(-2deg);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 4px solid #fff;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(-2deg) translateY(0px); }
+            50% { transform: rotate(-2deg) translateY(-10px); }
+        }
+
+        .title-sticker h1 {
+            font-size: 4em;
+            font-weight: 800;
+            background: linear-gradient(to right, #fff, #ffd700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .subtitle-tag {
+            display: inline-block;
+            background: #ff6b9d;
+            color: white;
+            padding: 10px 30px;
+            transform: rotate(1deg);
+            font-size: 1.2em;
+            font-weight: 600;
+            box-shadow: 0 10px 25px rgba(255, 107, 157, 0.4);
+            border-radius: 30px;
+        }
+
+        /* Grid layout scrapbook style */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        /* Card dengan style collage */
+        .photo-card {
+            grid-column: span 8;
+            position: relative;
+            background: #1a1f3a;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            transform: rotate(-1deg);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 8px solid #fff;
+        }
+
+        .tape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(5px);
+            height: 40px;
+            transform: rotate(-45deg);
+        }
+
+        .tape-1 { top: -10px; left: 30%; width: 100px; }
+        .tape-2 { top: -10px; right: 30%; width: 80px; }
+        .tape-3 { bottom: -10px; left: 40%; width: 90px; }
+
+        /* Info cards */
+        .info-stack {
+            grid-column: span 4;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transform: rotate(1deg);
+            transition: transform 0.3s ease;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .info-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+
+        .info-card p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Achievement badge */
+        .badge-container {
+            grid-column: span 6;
+            position: relative;
+            padding: 40px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 30px;
+            box-shadow: 0 25px 50px rgba(245, 87, 108, 0.4);
+            transform: rotate(-2deg);
+            border: 5px dashed #fff;
+        }
+
+        .badge-container h2 {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .badge-details {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .badge-details p {
+            font-size: 1.3em;
+            margin: 10px 0;
+            font-weight: 600;
+        }
+
+        /* Message section dengan style note */
+        .message-note {
+            grid-column: span 6;
+            background: #ffd93d;
+            color: #2d2d2d;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.3),
+                inset 0 -3px 10px rgba(0, 0, 0, 0.1);
+            transform: rotate(1deg);
+            position: relative;
+            font-family: 'Courier New', monospace;
+        }
+
+        .message-note::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .message-note p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        /* Stats grid seperti polaroid */
+        .stats-section {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat-polaroid {
+            background: #fff;
+            padding: 20px;
+            padding-bottom: 60px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            transform: rotate(-3deg);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-polaroid:nth-child(2) { transform: rotate(2deg); }
+        .stat-polaroid:nth-child(3) { transform: rotate(-1deg); }
+
+        .stat-polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 10;
+        }
+
+        .stat-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            text-align: center;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .stat-content .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+
+        .stat-content .value {
+            font-size: 2em;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+        /* Gallery grid untuk screenshot */
+        .gallery-grid {
+            grid-column: span 12;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:nth-child(1) { transform: rotate(-2deg); }
+        .gallery-item:nth-child(2) { transform: rotate(1deg); }
+        .gallery-item:nth-child(3) { transform: rotate(-1deg); }
+        .gallery-item:nth-child(4) { transform: rotate(2deg); }
+
+        .gallery-item:hover {
+            transform: rotate(0deg) scale(1.05);
+            z-index: 10;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 6px solid #fff;
+        }
+
+        /* Stickers decoratif */
+        .sticker {
+            position: absolute;
+            font-size: 3em;
+            animation: bounce 2s ease-in-out infinite;
+            z-index: 100;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        .sticker-1 { top: 100px; right: 10%; animation-delay: 0s; }
+        .sticker-2 { top: 50%; left: 5%; animation-delay: 0.5s; }
+        .sticker-3 { bottom: 100px; right: 15%; animation-delay: 1s; }
+
+        /* Footer */
+        .footer {
+            grid-column: span 12;
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .title-sticker h1 { font-size: 2.5em; }
+            .photo-card, .info-stack, .badge-container, .message-note, .stats-section {
+                grid-column: span 12;
+            }
+            .content-grid { gap: 20px; }
+        }
+
+        /* Particles */
+        .particle {
+            position: fixed;
+            pointer-events: none;
+            animation: float-particle 4s ease-in-out infinite;
+        }
+
+        @keyframes float-particle {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translate(50px, -50px) rotate(180deg); opacity: 0.6; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-pattern"></div>
+    
+    <!-- Stickers decoratif -->
+    <div class="sticker sticker-1">🏆</div>
+    <div class="sticker sticker-2">⭐</div>
+    <div class="sticker sticker-3">🎮</div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="title-sticker">
+                <h1>Congrattssss AAmyyyyyyy</h1>
+            </div>
+            <br>
+            <div class="subtitle-tag">
+                El Maja Achievement Unlocked 🐟
+            </div>
+        </div>
+
+        <!-- Content Grid -->
+        <div class="content-grid">
+            <!-- Main photo card -->
+            <div class="photo-card">
+                <div class="tape tape-1"></div>
+                <div class="tape tape-2"></div>
+                <img src="screenshot4.jpg" alt="Amy with Ice Cream" id="mainImage" onerror="this.src='https://via.placeholder.com/800x600/667eea/ffffff?text=Amy+El+Maja+Achievement'">
+                <div class="tape tape-3"></div>
+            </div>
+
+            <!-- Info Stack -->
+            <div class="info-stack">
+                <div class="info-card">
+                    <h3>🎮 ELLLLLMAJAAA</h3>
+                    <p><strong>Fish It</strong><br>Roblox</p>
+                </div>
+                <div class="info-card">
+                    <h3>🐟 Catch</h3>
+                    <p><strong>El Maja</strong><br>Legendary Tier</p>
+                </div>
+                <div class="info-card">
+                    <h3>⭐ Rarity</h3>
+                    <p><strong>Ultra Rare</strong><br>0.01% Drop Rate</p>
+                </div>
+            </div>
+
+            <!-- Achievement Badge -->
+            <div class="badge-container">
+                <h2>🏆 ACHIEVEMENT 🏆</h2>
+                <div class="badge-details">
+                    <p>🐟 EL MAJAAAAA 🐟</p>
+                    <p>Status: Secretttt</p>
+                    <p>Difficulty: -10000000000000000%</p>
+                </div>
+            </div>
+
+            <!-- Message Note -->
+            <div class="message-note">
+                <p><strong>Dear Amy,</strong></p>
+                <p>Anjjaaayyyy udahh bisa tengill nih orang WKWKWKWKW</p>
+                <p>BTW selamat yhh i know it just a game but kerenn bangett el majaaaaaa</p>
+                <p>Tetap mancing dan jangan lupa jumawa 🔥</p>
+            </div>
+
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-polaroid">
+                    <div class="stat-content">
+                        <div class="icon">🎯</div>
+                        <div class="label">Skill Level</div>
+                        <div class="value">MASTER</div>
+                    </div>
+                </div>
+                <div class="stat-polaroid">
+                    <div class="stat-content">
+                        <div class="icon">🔥</div>
+                        <div class="label">Status</div>
+                        <div class="value">LEGENDARY</div>
+                    </div>
+                </div>
+                <div class="stat-polaroid">
+                    <div class="stat-content">
+                        <div class="icon">💎</div>
+                        <div class="label">Achievement</div>
+                        <div class="value">EPIC</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery untuk semua screenshot -->
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="screenshot1.jpg" alt="El Maja Catch" onerror="this.src='https://via.placeholder.com/400x300/2d3561/667eea?text=El+Maja+Golden+Fish'">
+                </div>
+                <div class="gallery-item">
+                    <img src="screenshot2.jpg" alt="Amy Character" onerror="this.src='https://via.placeholder.com/400x300/2d3561/667eea?text=Amy+in+Game'">
+                </div>
+                <div class="gallery-item">
+                    <img src="screenshot3.jpg" alt="Fishing Action" onerror="this.src='https://via.placeholder.com/400x300/2d3561/667eea?text=Epic+Fishing+Moment'">
+                </div>
+                <div class="gallery-item">
+                    <img src="screenshot4.jpg" alt="Halloween Event" onerror="this.src='https://via.placeholder.com/400x300/2d3561/667eea?text=Halloween+Event'">
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p><strong>🎊 gatau kotak ini mau aku isi apa jujur 🎊</strong></p>
+                <p>btw masi blm narik big frostborn yh km? :bbb</p>
+                <p style="margin-top: 20px; opacity: 0.7;">dari gw anak teknik yang josjis mantep pemancing sejati dan baik hati</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Parallax effect untuk stickers
+        document.addEventListener('mousemove', (e) => {
+            const stickers = document.querySelectorAll('.sticker');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            stickers.forEach((sticker, index) => {
+                const speed = (index + 1) * 20;
+                sticker.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.textContent = ['✨', '⭐', '💫', '🌟'][Math.floor(Math.random() * 4)];
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            particle.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(particle);
+
+            setTimeout(() => particle.remove(), 4000);
+        }
+
+        setInterval(createParticle, 500);
+
+        // Smooth scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.info-card, .stat-polaroid, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
